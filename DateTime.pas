@@ -16,6 +16,15 @@ begin
     Result := 2;
 end;
 
+/// количество дней в году
+function DaysInYear(year: integer): integer;
+begin
+  if IsLeapYear(year) then
+    Result := 366
+  else
+    Result := 365;
+end;
+
 begin
   
 end.
