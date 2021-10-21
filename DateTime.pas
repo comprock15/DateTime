@@ -10,6 +10,8 @@ end;
 /// проверка какой из двух дней ближе к Новому году
 function LaterInYear(d1, d2: integer): integer;
 begin
+  d1 := d1 mod 365;
+  d2 := d2 mod 365;
   if d1 > d2 then 
     Result := 1
   else
@@ -23,6 +25,15 @@ begin
     Result := 366
   else
     Result := 365;
+end;
+
+/// количество дней в году
+function DaysInYearRange(year1, year2: integer): integer;
+begin
+  var ans := 0;
+  for var y := year1 to year2 do
+    ans += DaysInYear(y);
+  Result := ans;
 end;
 
 begin
