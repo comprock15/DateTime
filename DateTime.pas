@@ -27,7 +27,7 @@ begin
     Result := 365;
 end;
 
-/// количество дней в году
+/// количество дней между годами
 function DaysInYearRange(year1, year2: integer): integer;
 begin
   var ans := 0;
@@ -35,6 +35,9 @@ begin
     ans += DaysInYear(y);
   Result := ans;
 end;
+
+/// Кол-во секунд в данном кол-ве часов
+function SecondsInHours(h: integer): integer := h * 3600;
 
 begin
   
